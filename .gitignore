@@ -1,3 +1,5 @@
 src/templates/*
 !src/templates/test.html
+src/data/*
+!src/data/test.json
 node_modules
