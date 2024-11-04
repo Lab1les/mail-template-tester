@@ -1,0 +1,15 @@
+{
+  "name": "email-templates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker pull maildev/maildev && docker run -p 1080:1080 -p 1025:1025 maildev/maildev",
+    "send": "node src/send.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
