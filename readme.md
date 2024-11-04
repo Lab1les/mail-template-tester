@@ -1,30 +1,39 @@
+
 # Email Template Tester
 
-This is a tool that let you test your html email template
+This is a tool that lets you test your HTML email templates.
 
-## how to use it
+## How to Use It
 
-Frist install everything:
+First, install all dependencies:
 
 ```
 npm install
 ```
 
-Then, you need to run the mail client and mail SMTP server (with Docker)
+Then, run the mail client and SMTP server (using Docker):
+
 ```
 npm run smtp
 ```
 
-You can access the mail client on http://localhost:1080/
+You can access the mail client at http://localhost:1080/
 
-To test the email template, run
+To test the email template, run:
+
 ```
 npm run send -- TEMPLATE_NAME
 ```
 
-You will recive and email on your mail client app
+You will receive an email in your mail client app.
 
-## Config info
-- Respect the file folder, put all of your email template in ```src/templates``` in html format
-- argument **TEMPLATE_NAME** do not need the file path or the file extension (.html) but just the template name
-- If no file name is provided, it nodemailer will use the default ```test.html``` template
+## Config
+#### Create Template
+- Follow the file structure: put all your email templates in ```src/templates``` in HTML format.
+- The **TEMPLATE_NAME** argument does not require the file path or the file extension (.html) – just the template name.
+- If no file name is provided, Nodemailer will use the default ```test.html``` template.
+
+#### External Data
+- To use external data, **create a .json file** in the ```src/data``` folder.
+- The **.json file name must match the name of the template** you want to use with that data, so the application can locate the data using the file name passed as an argument.
+- Use only first-level data in the .json file; avoid nested objects (perhaps in the future).
